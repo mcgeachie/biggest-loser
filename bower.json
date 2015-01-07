@@ -1,0 +1,29 @@
+{
+  "name": "faw-biggest-loser",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "angular": "~1.3.8",
+    "angularfire": "~0.9.0",
+    "bootstrap": "~3.3.1"
+  },
+  "version": "0.0.1",
+  "authors": [
+    "telly <telly@bskyb.com>"
+  ],
+  "description": "Watch us lose our turkey weight",
+  "keywords": [
+    "fatties"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "~1.3.8"
+  }
+}

@@ -1,4 +1,4 @@
-weight-tracker
-==============
+Biggest Loser
+=============
 
 Fitness Goal Tracker

@@ -1,0 +1,13 @@
+.faw-icon {
+  padding: 0.2em;
+  border: {
+    width: 1px;
+    style: solid;
+    color: rgba(0, 0, 0, 1);
+  };
+  border-radius: 1.4em;
+}
+
+.input-group-addon {
+  &.post { width: 40px; }
+}
