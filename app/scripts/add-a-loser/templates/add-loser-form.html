@@ -1,0 +1,31 @@
+<div class="modal-body">
+  <form novalidate name="add-a-loser" id="add-a-loser">
+    <div class="input-group">
+      <input type="text" class="form-control" name="name" data-ng-model="newLoser.name" placeholder="Full Name">
+    </div>
+
+    <div class="input-group">
+      <input type="text" class="form-control" name="start-date" datepicker-popup="dd/MM/yyyy" ng-model="newLoser.startDate" init-date="today" is-open="datepickerOpen" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+      <span class="input-group-addon" ng-click="openDatepicker($event)">
+        <i class="glyphicon glyphicon-calendar"></i>
+      </span>
+    </div>
+
+    <div class="input-group">
+      <input type="number" class="form-control" name="start-weight" data-ng-model="newLoser.startWeight" placeholder="Weight">
+      <span class="input-group-addon">kg</span>
+    </div>
+
+    <div class="input-group">
+      <input type="number" class="form-control" name="height" data-ng-model="newLoser.height" placeholder="Heighth">
+      <span class="input-group-addon">cm</span>
+    </div>
+
+    <div data-ng-show="newLoser.initials">
+      <img data-ng-src="http://avatar.faw.bskyb.com/display/{{newLoser.initials}}" alt="{{newLoser.name}}'s Stupid Face" />
+    </div>
+
+    <input type="submit" class="btn btn-primary" name="submit" value="Submit" data-ng-click="addLoser()" />
+    <input type="button" class="btn btn-default" name="cancel" value="Cancel" data-ng-click="cancelForm()" />
+  </form>
+</div>

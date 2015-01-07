@@ -23,6 +23,15 @@
 
     <add-loser-button></add-loser-button>
 
+    <div data-ng-controller="LoserCtrl">
+      <div data-ng-repeat="loser in losers">
+        <span>{{loser.initials}}</span>
+        <span>{{loser.name}}</span>
+        <span>{{loser.height}}</span>
+        <span>{{loser.startWeight.kg}}</span>
+      </div>
+    </div>
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -30,9 +39,9 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -46,8 +55,10 @@
 
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/losers/losers.controller.js"></script>
     <script src="scripts/add-a-loser/add-a-loser.controller.js"></script>
-    <script src="scripts/add-a-loser/button/add-a-loser-button.directive.js"></script>
+    <script src="scripts/add-a-loser/add-a-loser-button.directive.js"></script>
+    <script src="scripts/losers/losers-db.service.js"></script>
     <!-- endbuild -->
   </body>
 </html>
