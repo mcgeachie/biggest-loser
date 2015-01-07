@@ -25,7 +25,7 @@
 
     <div data-ng-controller="LoserCtrl">
       <div data-ng-repeat="loser in losers">
-        <span>{{loser.initials}}</span>
+        <img class="loser-avatar small" data-ng-src="http://avatar.faw.bskyb.com/display/{{loser.initials}}" alt="{{loser.name}}'s Stupid Face" />
         <span>{{loser.name}}</span>
         <span>{{loser.height}}</span>
         <span>{{loser.startWeight.kg}}</span>
@@ -59,6 +59,7 @@
     <script src="scripts/add-a-loser/add-a-loser.controller.js"></script>
     <script src="scripts/add-a-loser/add-a-loser-button.directive.js"></script>
     <script src="scripts/losers/losers-db.service.js"></script>
+    <script src="scripts/loser-avatar/empty-avatar.service.js"></script>
     <!-- endbuild -->
   </body>
 </html>

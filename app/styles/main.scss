@@ -11,3 +11,14 @@
 .input-group-addon {
   &.post { width: 40px; }
 }
+
+.loser-avatar {
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+
+  &.small {
+    width: 50px;
+    height: 50px;
+  }
+}
