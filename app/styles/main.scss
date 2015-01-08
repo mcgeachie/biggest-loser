@@ -1,33 +1,73 @@
-.faw-icon {
-  padding: 0.2em;
-  border: {
-    width: 1px;
-    style: solid;
-    color: rgba(0, 0, 0, 1);
-  };
-  border-radius: 1.4em;
+body {
+    height: 100%;
+    background: #eee;
+    font: 16/20px Arial, Helvetica, sans-serif;
 }
 
-.input-group-addon {
-  &.post { width: 40px; }
+header {
+    width: 100%;
+    padding: 15px 2%;
+    box-sizing: border-box;
+
+    h1 {
+       display: inline-block;
+       font-size: 3em;
+       padding: 0;
+       margin: 0;
+    }
+
+    .btn-group { float: right; }
+}
+
+.loser-modal {
+    .new-loser-name { width: 100%; }
+    .input-group { margin-bottom: 15px; }
+}
+
+.loser-section {
+    width: 96%;
+    background: #fff;
+    color: #333;
+    padding: 15px;
+    border: 1px solid #ccc;
+    margin: 15px 2%;
+    box-sizing: border-box;
+    zoom: 1;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after { clear: both; }
+}
+
+.rounded { border-radius: 6px !important; }
+
+.loser-list-item {
+    width: 25%;
+    float: left;
+    padding: 1em;
+    box-sizing: border-box;
 }
 
 .loser-avatar {
-  width: 200px;
-  height: 200px;
-  display: inline-block;
+    width: 200px;
+    height: 200px;
+    display: inline-block;
 
-  &.small {
-    width: 50px;
-    height: 50px;
-  }
+    &.small {
+        width: 50px;
+        height: 50px;
+    }
 }
 
 .bmi-printout {
-  width: 100%;
-  font-size: 1.2em;
-  font-weight: bold;
-  padding: .8em 0;
-  display: block;
-  text-align: center;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0 0 .8em 0;
+    display: block;
+    text-align: center;
 }

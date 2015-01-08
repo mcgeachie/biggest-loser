@@ -1,6 +1,19 @@
-<div class="modal-body">
-  <input type="text" class="form-control" ng-model="weight" placeholder="Weight" />
-  <input type="text" class="form-control" ng-model="height" placeholder="Height" />
-  <span class="bmi-printout" data-ng-show="bmi">BMI: {{bmi}}</span>
-  <button type="button" class="btn btn-default" data-ng-click="cancelBmiForm()">Cancel</button>
+<div class="modal-body loser-modal">
+    <div class="input-group input-group-lg">
+        <input type="number" class="form-control" name="bmiWeight" data-ng-model="weight" placeholder="Weight">
+        <span class="input-group-addon">kg</span>
+    </div>
+
+    <div class="input-group input-group-lg">
+        <input type="number" class="form-control" name="bmiHeight" data-ng-model="height" placeholder="Heighth">
+        <span class="input-group-addon">cm</span>
+    </div>
+
+    <span class="bmi-printout" data-ng-show="bmi">BMI: {{bmi}}</span>
+
+    <div class="btn-group btn-group-justified" role="group">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default rounded" data-ng-click="cancelBmiForm()">Cancel</button>
+        </div>
+    </div>
 </div>

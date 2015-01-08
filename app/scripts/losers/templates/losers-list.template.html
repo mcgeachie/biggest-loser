@@ -1,9 +1,9 @@
-<section>
-  <div data-ng-repeat="loser in losers | orderBy:sortOrder">
-    <loser-avatar class="small" data-loser="loser"></loser-avatar>
-    <span>{{loser.name}}</span>
+<section class="loser-section rounded">
+  <div data-ng-repeat="loser in losers" class="loser-list-item">
+    <span title="{{loser.startWeight.kg}}">{{loser.name}}</span>
+    <!-- <loser-avatar class="small" data-loser="loser"></loser-avatar> -->
     <!-- <span>{{loser.height}}</span> -->
     <!-- <span>{{loser.startWeight.kg}}</span> -->
-    <span data-ng-repeat="weight in loser.weights" title="calculateBMI(loser)"><b>{{weight.kg}}</b> {{weight.bmi | number: 1}}</span>
+    <!-- <span data-ng-repeat="weight in loser.weights" title="calculateBMI(loser)"><b>{{weight.kg}}</b> {{weight.bmi | number: 1}}</span> -->
   </div>
 </section>
