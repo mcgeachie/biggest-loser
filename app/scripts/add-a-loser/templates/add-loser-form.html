@@ -1,5 +1,5 @@
 <div class="modal-body">
-  <form novalidate name="add-a-loser" id="add-a-loser">
+  <form novalidate name="addALoser" id="add-a-loser">
     <div class="input-group">
       <input type="text" class="form-control" name="name" data-ng-model="newLoser.name" placeholder="Full Name">
     </div>
@@ -22,10 +22,10 @@
     </div>
 
     <div data-ng-show="newLoser.initials">
-      <img class="loser-avatar" data-ng-src="http://avatar.faw.bskyb.com/display/{{newLoser.initials}}" alt="{{newLoser.name}}'s Stupid Face" />
+      <loser-avatar loser="newLoser"></loser-avatar>
     </div>
 
-    <input type="submit" class="btn btn-primary" name="submit" value="Submit" data-ng-click="addLoser()" />
+    <input type="submit" class="btn btn-primary" name="submit" value="Submit" data-ng-click="addLoser()" data-ng-disabled="addALoser.$invalid" />
     <input type="button" class="btn btn-default" name="cancel" value="Cancel" data-ng-click="cancelForm()" />
   </form>
 </div>
