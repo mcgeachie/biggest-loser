@@ -4,6 +4,6 @@
     <span>{{loser.name}}</span>
     <!-- <span>{{loser.height}}</span> -->
     <!-- <span>{{loser.startWeight.kg}}</span> -->
-    <span data-ng-repeat="weight in loser.weights" title="calculateBMI(loser)">{{weight.kg}}</span>
+    <span data-ng-repeat="weight in loser.weights" title="calculateBMI(loser)"><b>{{weight.kg}}</b> {{weight.bmi | number: 1}}</span>
   </div>
 </section>
