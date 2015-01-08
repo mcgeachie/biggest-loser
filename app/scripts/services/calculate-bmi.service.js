@@ -5,5 +5,5 @@ loserServices.factory('calculateBmi', [function () {
     var heightInMetres = height / 100;
 
     return (weight / heightInMetres) / heightInMetres;
-  }
+  };
 }]);

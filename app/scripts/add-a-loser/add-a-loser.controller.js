@@ -1,6 +1,6 @@
 var loserControllers = angular.module('loserControllers');
 
-loserControllers.controller('AddLoserCtrl', ['$scope', '$modal', '$rootScope', function ($scope, $modal, $rootScope) {
+loserControllers.controller('AddLoserCtrl', ['$scope', '$modal', '$rootScope', 'calculateBmi', function ($scope, $modal, $rootScope, calculateBmi) {
   var findInitials = function (name) {
         var processedName = name.replace('\'', ''), //For anyone who thinks an apostrophe is valid in a NAME
             initialsArray = processedName.match(/\b(\w)/g),
@@ -40,18 +40,23 @@ loserControllers.controller('AddLoserCtrl', ['$scope', '$modal', '$rootScope', f
   };
 
   $scope.addLoser = function () {
+    var weight = $scope.newLoser.startWeight,
+        bmi = calculateBmi(weight, $scope.newLoser.height);
+
     $rootScope.losers.$add({
       name: $scope.newLoser.name,
       initials: $scope.newLoser.initials,
       height: $scope.newLoser.height,
       startWeight: {
-        kg: $scope.newLoser.startWeight,
-        datePoint: $scope.newLoser.startDate.toString()
+        kg: weight,
+        datePoint: $scope.newLoser.startDate.toString(),
+        bmi: bmi
       },
       weights: [
         {
-          kg: $scope.newLoser.startWeight,
-          datePoint: $scope.newLoser.startDate.toString()
+          kg: weight,
+          datePoint: $scope.newLoser.startDate.toString(),
+          bmi: bmi
         }
       ]
     });
