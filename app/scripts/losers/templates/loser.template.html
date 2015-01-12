@@ -1,0 +1,14 @@
+<div data-ng-mouseenter="hover(loser)" data-ng-mouseleave="hover(loser)">
+  <span>{{loser.name}}</span>
+  <!-- <loser-avatar class="small" data-loser="loser"></loser-avatar> -->
+  <!-- <span>{{loser.height}}</span> -->
+  <!-- <span>{{loser.startWeight.kg}}</span> -->
+  <!-- <span data-ng-repeat="weight in loser.weights" title="calculateBMI(loser)"><b>{{weight.kg}}</b> {{weight.bmi | number: 1}}</span> -->
+  <!-- <span data-ng-repeat="weight in loser.weights" title="calculateBMI(loser)"><b>{{weight.kg}}</b></span> -->
+  <span class="loser-diff">
+    <span class="glyphicon glyphicon-arrow-up up" data-ng-if="loser.difference < 0" aria-hidden="true"></span>
+    <span class="glyphicon glyphicon-arrow-down down" data-ng-if="loser.difference > 0" aria-hidden="true"></span>
+    <span class="figure">{{loser.difference}}%</span>
+  </span>
+  <span class="glyphicon glyphicon-plus add-data-icon" title="Add data point" data-ng-click="addDataPoint(loser)" data-ng-show="loser.showAdd"></span>
+</div>

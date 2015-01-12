@@ -1,5 +1,4 @@
-
-add weight/date data-point for each team member
+sort losers by current percentage ranking
 
 track changes week-on-week
 
@@ -14,6 +13,8 @@ graphical representation of progress(es)
 DONE LIST
 =========
 list of team members
+
+add weight/date data-point for each team member
 
 * Fallback for losers without avatars
 * BMI

@@ -1,22 +1,68 @@
 body {
     height: 100%;
     background: #eee;
-    font: 16/20px Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-family: sans-serif;
 }
 
 header {
     width: 100%;
+    color: #fff;
+    background: #f94931;
+    background: -moz-linear-gradient(left, #f94931 0%, #f7a72e 50%, #f4e730 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f94931), color-stop(50%,#f7a72e), color-stop(100%,#f4e730)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #f94931 0%,#f7a72e 50%,#f4e730 100%);
+    background: -o-linear-gradient(left, #f94931 0%,#f7a72e 50%,#f4e730 100%);
+    background: -ms-linear-gradient(left, #f94931 0%,#f7a72e 50%,#f4e730 100%);
+    background: linear-gradient(to right, #f94931 0%,#f7a72e 50%,#f4e730 100%);
     padding: 15px 2%;
     box-sizing: border-box;
 
     h1 {
        display: inline-block;
+       font-family: 'Montserrat', sans-serif;
        font-size: 3em;
        padding: 0;
        margin: 0;
     }
 
     .btn-group { float: right; }
+
+    .loser-btn {
+      border-color: #fff;
+      background-color: transparent;
+
+      &:hover { border-color: #333; }
+    }
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    padding: 0 2%;
+    margin: 0;
+    box-sizing: border-box;
+
+    &:before {
+      content: "";
+      width: 125%;
+      height: 125%;
+      background-image: url('/images/weights.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      top: -25%;
+      right: -25%;
+      left: -25%;
+      position: fixed;
+      z-index: -1;
+      -webkit-filter: blur(5px);
+      -moz-filter: blur(5px);
+      -o-filter: blur(5px);
+      -ms-filter: blur(5px);
+      filter: blur(5px);
+    }
 }
 
 .loser-modal {
@@ -25,12 +71,11 @@ header {
 }
 
 .loser-section {
-    width: 96%;
+    width: 100%;
     background: #fff;
-    color: #333;
+    color:  #f94931;
     padding: 15px;
-    border: 1px solid #ccc;
-    margin: 15px 2%;
+    margin: 15px 0;
     box-sizing: border-box;
     zoom: 1;
 
@@ -46,10 +91,32 @@ header {
 .rounded { border-radius: 6px !important; }
 
 .loser-list-item {
-    width: 25%;
+    width: 33%;
+    font-family: 'Rock Salt', cursive;
     float: left;
     padding: 1em;
     box-sizing: border-box;
+
+    .add-data-icon {
+      cursor: pointer;
+    }
+}
+
+.loser-diff {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: .85em;
+  color: #333;
+  padding-left: 10px;
+
+  .up { color: #fa0532; }
+
+  .down { color: #0cf520; }
+
+  .up ~ .figure,
+  .down ~ .figure {
+    margin-left: -6px;
+  }
 }
 
 .loser-avatar {
