@@ -7,7 +7,7 @@ loserDirectives.directive('loser', [function () {
     scope: {
       loser: '='
     },
-    templateUrl: '/scripts/losers/templates/loser.template.html',
+    templateUrl: '/scripts/loser/templates/loser.template.html',
     replace: true
   };
 }]);

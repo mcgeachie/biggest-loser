@@ -6,8 +6,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -15,6 +13,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -35,7 +34,6 @@
         <losers-list></losers-list>
     </main>
 
-
     <script src="bower_components/jquery/dist/jquery.js"></script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -48,16 +46,6 @@
     <!-- endbuild -->
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/losers/losers.controller.js"></script>
@@ -65,14 +53,13 @@
     <script src="scripts/add-a-loser/add-a-loser-button.directive.js"></script>
     <script src="scripts/losers/losers-list.directive.js"></script>
     <script src="scripts/losers/losers-db.service.js"></script>
-    <script src="scripts/losers/add-data.controller.js"></script>
     <script src="scripts/loser-avatar/loser-avatar.directive.js"></script>
     <script src="scripts/calculate-bmi/calculate-bmi.controller.js"></script>
     <script src="scripts/calculate-bmi/calculate-bmi-button.directive.js"></script>
     <script src="scripts/calculate-bmi/calculate-bmi.service.js"></script>
-    <script src="scripts/losers/loser.directive.js"></script>
-    <script src="scripts/losers/loser.controller.js"></script>
-    <script src="scripts/losers/add-data.controller.js"></script>
+    <script src="scripts/loser/loser.directive.js"></script>
+    <script src="scripts/loser/loser.controller.js"></script>
+    <script src="scripts/loser/add-data.controller.js"></script>
     <!-- endbuild -->
   </body>
 </html>

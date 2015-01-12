@@ -17,7 +17,7 @@ loserControllers.controller('LoserCtrl', ['$scope', '$rootScope', '$modal', '$fi
 
   $scope.addDataPoint = function (loser) {
     $scope.modal = $modal.open({
-      templateUrl: 'scripts/losers/templates/add-weight-data.template.html',
+      templateUrl: 'scripts/loser/templates/add-weight-data.template.html',
       controller: 'AddDataCtrl',
       size: 'sm',
       scope: $scope
