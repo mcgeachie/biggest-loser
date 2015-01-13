@@ -15,7 +15,6 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" type="text/css" href="bower_components/jqplot/jquery.jqplot.min.css" />
     <!-- endbuild -->
   </head>
   <body data-ng-app="biggestLoserApp">
@@ -37,14 +36,10 @@
           <div class="loser-graph rounded">
             <canvas id="myChart"></canvas>
           </div>
-          <!-- {{chartData}} -->
-          <!-- <div ui-chart="chartData" chart-options="chartOptions" style="height:400px;width:100%" ></div> -->
         </section>
     </main>
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/jqplot/jquery.jqplot.min.js"></script>
-    <script src="bower_components/jqplot/plugins/jqplot.pieRenderer.min.js"></script>
     <script src="bower_components/chartjs/Chart.min.js"></script>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -53,7 +48,6 @@
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/angularfire/dist/angularfire.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-ui-chart/src/chart.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>

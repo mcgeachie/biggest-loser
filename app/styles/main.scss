@@ -142,13 +142,13 @@ main {
 
 .loser-graph {
   width: 100%;
-  background: #f4e730;
-  background: -moz-linear-gradient(top, #f4e730 0%, #f7a72e 50%, #f94931 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4e730), color-stop(50%,#f7a72e), color-stop(100%,#f94931));
-  background: -webkit-linear-gradient(top, #f4e730 0%,#f7a72e 50%,#f94931 100%);
-  background: -o-linear-gradient(top, #f4e730 0%,#f7a72e 50%,#f94931 100%);
-  background: -ms-linear-gradient(top, #f4e730 0%,#f7a72e 50%,#f94931 100%);
-  background: linear-gradient(to bottom, #f4e730 0%,#f7a72e 50%,#f94931 100%);
+  background: hsla(36, 93%, 57%, 1);
+  background: -moz-linear-gradient(top, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsla(36, 93%, 57%, 1)), color-stop(100%, hsla(36, 93%, 45%, 1)));
+  background: -webkit-linear-gradient(top, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
+  background: -o-linear-gradient(top, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
+  background: -ms-linear-gradient(top, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
+  background: linear-gradient(to bottom, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
   padding: 15px;
   margin: 15px 0;
   display: block;
