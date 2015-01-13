@@ -60,6 +60,7 @@ loserControllers.controller('AddLoserCtrl', ['$scope', '$modal', '$rootScope', '
         }
       ]
     });
+    //TODO: Create 'weights' using Firebase method as array
     $scope.cancelForm();
   };
 
