@@ -30,7 +30,7 @@ loserControllers.controller('AddDataCtrl', ['$scope', '$firebase', 'calculateBmi
       kg: $scope.weight,
       datePoint: $scope.date.toString(),
       bmi: calculateBmi($scope.weight, $scope.$parent.loser.height),
-      difference: differenceFromStartWeight($scope.weight)
+      diff: differenceFromStartWeight($scope.weight)
     })
 
     $scope.cancelForm();

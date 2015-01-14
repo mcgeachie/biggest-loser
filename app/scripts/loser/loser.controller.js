@@ -1,18 +1,16 @@
 var loserControllers = angular.module('loserControllers');
 
-loserControllers.controller('LoserCtrl', ['$scope', '$rootScope', '$modal', '$firebase', function ($scope, $rootScope, $modal, $firebase) {
-  var differenceFromStartWeight = function (weight) {
-          var startWeight = $scope.loser.startWeight.kg,
-              onePercentOfStart = startWeight / 100,
-              kgDifference = startWeight - weight;
-
-          return Math.round((kgDifference / onePercentOfStart) * 10 ) / 10;
-      };
-
+loserControllers.controller('LoserCtrl', ['$scope', '$modal', '$firebase', function ($scope, $modal, $firebase) {
   $scope.loser.weights = $firebase(new Firebase('https://faw-biggest-loser.firebaseio.com/losers/' + $scope.loser.$id + '/weights')).$asArray();
 
+  $scope.loser.weights.$loaded(function () {
+      $scope.loser.$weightsLoaded.resolve('Weight data successfully loaded for ' + $scope.loser.name);
+  }, function () {
+      $scope.loser.$weightsLoaded.reject('Weight data could not be retrieved for ' + $scope.loser.name);
+  });
+
   $scope.hover = function (loser) {
-    return loser.showAdd = !loser.showAdd;
+      return loser.showAdd = !loser.showAdd;
   };
 
   $scope.addDataPoint = function (loser) {
@@ -25,6 +23,16 @@ loserControllers.controller('LoserCtrl', ['$scope', '$rootScope', '$modal', '$fi
   };
 
   $scope.loser.weights.$watch(function (event) {
-    $scope.loser.difference = event.prevChild ? differenceFromStartWeight($scope.loser.weights.$getRecord(event.key).kg) : 0;
+    var findLatestDiff = function (loser) {
+            var difference;
+
+            $scope.loser.weights.forEach(function (dataPoint) {
+              difference = dataPoint.diff;
+            });
+
+            return difference;
+        };
+
+    $scope.loser.$diff = findLatestDiff($scope.loser);
   });
 }]);

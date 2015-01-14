@@ -56,6 +56,7 @@ loserControllers.controller('AddLoserCtrl', ['$scope', '$modal', '$rootScope', '
         {
           kg: weight,
           datePoint: $scope.newLoser.startDate.toString(),
+          diff: 0,
           bmi: bmi
         }
       ]

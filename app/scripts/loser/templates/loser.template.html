@@ -8,7 +8,7 @@
   <span class="loser-diff">
     <span class="glyphicon glyphicon-arrow-up up" data-ng-if="loser.difference < 0" aria-hidden="true"></span>
     <span class="glyphicon glyphicon-arrow-down down" data-ng-if="loser.difference > 0" aria-hidden="true"></span>
-    <span class="figure">{{loser.difference}}%</span>
+    <span class="figure">{{loser.$diff}}%</span>
   </span>
   <span class="glyphicon glyphicon-plus add-data-icon" title="Add data point" data-ng-click="addDataPoint(loser)" data-ng-show="loser.showAdd"></span>
 </div>

@@ -33,7 +33,10 @@ header {
       border-color: #fff;
       background-color: transparent;
 
-      &:hover { border-color: #333; }
+      &:hover {
+        color: #fff;
+        box-shadow: 0 0 10px #f7a72e;
+      }
     }
 }
 
@@ -142,13 +145,13 @@ main {
 
 .loser-graph {
   width: 100%;
-  background: hsla(36, 93%, 57%, 1);
-  background: -moz-linear-gradient(top, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, hsla(36, 93%, 57%, 1)), color-stop(100%, hsla(36, 93%, 45%, 1)));
-  background: -webkit-linear-gradient(top, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
-  background: -o-linear-gradient(top, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
-  background: -ms-linear-gradient(top, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
-  background: linear-gradient(to bottom, hsla(36, 93%, 57%, 1) 0%, hsla(36, 93%, 45%, 1) 100%);
+  background: #f94931;
+  background: -moz-linear-gradient(left, #f94931 0%, #f7a72e 50%, #f4e730 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#f94931), color-stop(50%,#f7a72e), color-stop(100%,#f4e730)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #f94931 0%,#f7a72e 50%,#f4e730 100%);
+  background: -o-linear-gradient(left, #f94931 0%,#f7a72e 50%,#f4e730 100%);
+  background: -ms-linear-gradient(left, #f94931 0%,#f7a72e 50%,#f4e730 100%);
+  background: linear-gradient(to right, #f94931 0%,#f7a72e 50%,#f4e730 100%);
   padding: 15px;
   margin: 15px 0;
   display: block;

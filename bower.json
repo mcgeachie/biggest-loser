@@ -7,7 +7,8 @@
     "angularfire": "~0.9.0",
     "bootstrap": "~3.3.1",
     "angular-bootstrap": "~0.12.0",
-    "chartjs": "~1.0.1"
+    "chartjs": "~1.0.1",
+    "moment": "~2.9.0"
   },
   "version": "0.0.1",
   "authors": [
