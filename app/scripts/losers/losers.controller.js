@@ -73,6 +73,8 @@ loserControllers.controller('LosersCtrl', ['$scope', '$rootScope', '$q', '$modal
             correspondingDataFound = true;
             diff = loser.weights[weightKey].diff;
             break;
+          } else if (dataset.data.length > 0) {
+            diff = dataset.data[dataset.data.length - 1];
           }
         };
 
@@ -128,10 +130,12 @@ loserControllers.controller('LosersCtrl', ['$scope', '$rootScope', '$q', '$modal
 
     $scope.chart = new Chart(ctx).Line(data, {
       // onAnimationComplete: function () { renderAvatars() }
+      bezierCurve: false,
       scaleLineColor: "rgba(255, 255, 255, 0.5)",
       scaleGridLineColor : "rgba(255, 255, 255, 0.1)",
       scaleFontColor: "#fff",
       scaleLabel: "<%=value%> %",
+      scaleShowVerticalLines: false,
       showTooltips: false,
       responsive: true,
       datasetFill: false,
