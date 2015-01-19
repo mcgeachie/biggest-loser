@@ -4,5 +4,6 @@ loserControllers.controller('SelectedLoserCtrl', ['$scope', '$rootScope', functi
 
   $scope.deselectLoser = function () {
     $rootScope.$selectedLoser = null;
+    // $rootScope.$broadcast('losersLoaded', $rootScope.losers);
   };
 }]);

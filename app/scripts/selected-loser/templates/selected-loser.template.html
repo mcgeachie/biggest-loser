@@ -1,9 +1,9 @@
-<section data-ng-if="$selectedLoser" class="loser-section selected-loser rounded">
+<section data-ng-if="$selectedLoser" class="selected-loser">
   <loser-avatar data-loser="$selectedLoser"></loser-avatar>
   <h2>{{$selectedLoser.name}}</h2>
-  <span>Height: {{$selectedLoser.height}}cm</span>
-  <span>Starting Weight: {{$selectedLoser.startWeight.kg}}kg</span>
-  <span>Starting BMI: {{$selectedLoser.startWeight.bmi | number: 1}}</span>
+  <span class="starting-data">Height: {{$selectedLoser.height}}cm</span>
+  <span class="starting-data">Starting Weight: {{$selectedLoser.startWeight.kg}}kg</span>
+  <span class="starting-data">Starting BMI: {{$selectedLoser.startWeight.bmi | number: 1}}</span>
   <span data-ng-repeat="weight in $selectedLoser.weights" title="BMI: {{weight.bmi | number: 1}}">
     <span><b>{{weight.kg}}</b></span>
     <span class="loser-diff">{{weight.diff}}%</span>

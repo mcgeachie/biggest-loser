@@ -14,8 +14,8 @@ loserControllers.controller('LoserCtrl', ['$scope', '$rootScope', '$modal', '$fi
   };
 
   $scope.selectLoser = function (loser) {
-    console.log(loser);
     $rootScope.$selectedLoser = loser;
+    $rootScope.$broadcast('loserSelected', loser);
   };
 
   $scope.addDataPoint = function (loser) {

@@ -1,6 +1,14 @@
 var loserControllers = angular.module('loserControllers');
 
-loserControllers.controller('LoserChartCtrl', ['$scope', '$rootScope', 'sortDate', function ($scope, $rootScope, sortDate) {
+loserControllers.controller('LoserChartCtrl', ['$scope', '$rootScope', 'sortDate', 'findInitials', function ($scope, $rootScope, sortDate, findInitials) {
+  var renderAvatars = function () {
+        $scope.chart.datasets.forEach(function (dataset) {
+          var latestPoint = dataset.points[dataset.points.length - 1],
+              initials = findInitials(dataset.label);
+
+          if (initials) $scope.canvas.fillText(initials, latestPoint.x + 25, latestPoint.y);
+        });
+      };
 
   $scope.renderChart = function (losers) {
     var defaults = {
@@ -60,45 +68,8 @@ loserControllers.controller('LoserChartCtrl', ['$scope', '$rootScope', 'sortDate
       datasets: datasets
     };
 
-    function renderAvatars() {
-
-      var findInitials = function (name) {
-        var processedName = name.replace('\'', ''), //For anyone who thinks an apostrophe is valid in a NAME
-        initialsArray = processedName.match(/\b(\w)/g),
-        initials;
-
-        if (initialsArray.length > 1) {
-          initials = initialsArray[0] + initialsArray[initialsArray.length - 1];
-        }
-
-        return initials ? initials.toUpperCase() : initials;
-      };
-
-      $scope.chart.datasets.forEach(function (dataset) {
-        var latestPoint = dataset.points[dataset.points.length - 1],
-        avatarImage = new Image(),
-        initials = findInitials(dataset.label);
-
-        console.groupCollapsed(dataset.label);
-        console.log(dataset);
-        console.log(latestPoint.x);
-        console.log(latestPoint.y);
-        console.groupEnd();
-
-        avatarImage.onload = function () {
-          if (initials) $scope.canvas.drawImage(avatarImage, latestPoint.x - 20, latestPoint.y - 20, 40, 40);
-        };
-
-        avatarImage.onerror = function () {
-          avatarImage.src = '/images/grumpy-fat-cat.png';
-        };
-
-        avatarImage.src = 'http://avatar.faw.bskyb.com/display/' + initials;
-      });
-    };
-
     $scope.chart = new Chart($scope.canvas).Line(data, {
-      // onAnimationComplete: function () { renderAvatars() }
+      onAnimationComplete: function () { renderAvatars() },
       bezierCurve: false,
       scaleLineColor: "rgba(255, 255, 255, 0.5)",
       scaleGridLineColor : "rgba(255, 255, 255, 0.1)",
@@ -114,4 +85,8 @@ loserControllers.controller('LoserChartCtrl', ['$scope', '$rootScope', 'sortDate
   $rootScope.$on('losersLoaded', function (event, losers) {
     $scope.renderChart(losers);
   });
+
+  // $rootScope.$on('loserSelected', function (event, loser) {
+  //   $scope.renderChart([ loserArray ]);
+  // });
 }]);

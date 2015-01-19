@@ -1,18 +1,7 @@
 var loserControllers = angular.module('loserControllers');
 
-loserControllers.controller('AddLoserCtrl', ['$scope', '$modal', '$rootScope', 'calculateBmi', function ($scope, $modal, $rootScope, calculateBmi) {
-  var findInitials = function (name) {
-        var processedName = name.replace('\'', ''), //For anyone who thinks an apostrophe is valid in a NAME
-            initialsArray = processedName.match(/\b(\w)/g),
-            initials;
-
-        if (initialsArray.length > 1) {
-          initials = initialsArray[0] + initialsArray[initialsArray.length - 1];
-        }
-
-        return initials ? initials.toUpperCase() : initials;
-      },
-      resetNewLoser = function () {
+loserControllers.controller('AddLoserCtrl', ['$scope', '$modal', '$rootScope', 'calculateBmi', 'findInitials', function ($scope, $modal, $rootScope, calculateBmi, findInitials) {
+  var resetNewLoser = function () {
         $scope.newLoser = {};
       };
 
