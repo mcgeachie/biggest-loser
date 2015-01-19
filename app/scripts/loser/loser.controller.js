@@ -1,6 +1,6 @@
 var loserControllers = angular.module('loserControllers');
 
-loserControllers.controller('LoserCtrl', ['$scope', '$modal', '$firebase', function ($scope, $modal, $firebase) {
+loserControllers.controller('LoserCtrl', ['$scope', '$rootScope', '$modal', '$firebase', function ($scope, $rootScope, $modal, $firebase) {
   $scope.loser.weights = $firebase(new Firebase('https://faw-biggest-loser.firebaseio.com/losers/' + $scope.loser.$id + '/weights')).$asArray();
 
   $scope.loser.weights.$loaded(function () {
@@ -11,6 +11,11 @@ loserControllers.controller('LoserCtrl', ['$scope', '$modal', '$firebase', funct
 
   $scope.hover = function (loser) {
       return loser.showAdd = !loser.showAdd;
+  };
+
+  $scope.selectLoser = function (loser) {
+    console.log(loser);
+    $rootScope.$selectedLoser = loser;
   };
 
   $scope.addDataPoint = function (loser) {

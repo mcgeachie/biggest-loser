@@ -105,6 +105,8 @@ main {
     }
 }
 
+.loser-name { cursor: pointer; }
+
 .loser-diff {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
@@ -141,6 +143,19 @@ main {
     padding: 0 0 .8em 0;
     display: block;
     text-align: center;
+}
+
+.selected-loser {
+  position: relative;
+
+  .close-button {
+    position: absolute;
+    top: 20px;
+    right: 3px;
+    cursor: pointer;
+
+    label { text-indent: -9999px; }
+  }
 }
 
 .loser-graph {
