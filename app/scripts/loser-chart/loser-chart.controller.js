@@ -6,15 +6,22 @@ loserControllers.controller('LoserChartCtrl', ['$scope', '$rootScope', 'sortDate
           var latestPoint = dataset.points[dataset.points.length - 1],
               initials = findInitials(dataset.label);
 
-          if (initials) $scope.canvas.fillText(initials, latestPoint.x + 25, latestPoint.y);
+          if (initials) {
+              $scope.canvas.fillStyle = dataset.fillColor;
+              $scope.canvas.fillText(initials, latestPoint.x + 25, latestPoint.y);
+          }
         });
+      },
+      generateRandomRGB = function () {
+          var red =  Math.floor(Math.random() * 255);
+          var green =  Math.floor(Math.random() * 255);
+          var blue =  Math.floor(Math.random() * 255);
+
+          return 'rgba(' + red + ',' + green + ',' + blue + ',1)';
       };
 
   $scope.renderChart = function (losers) {
     var defaults = {
-          strokeColor: "rgba(255, 255, 255, 0.5)",
-          pointColor: "rgba(255, 255, 255, 1)",
-          pointStrokeColor: "#fff",
           pointHighlightFill: "#f94931",
           pointHighlightStroke: "rgba(255, 255, 255, 1)"
         },
@@ -33,16 +40,20 @@ loserControllers.controller('LoserChartCtrl', ['$scope', '$rootScope', 'sortDate
     labels.sort(sortDate);
 
     losers.forEach(function (loser) {
-
+      var colour = generateRandomRGB();
       var dataset = jQuery.extend({}, defaults, {
         label: loser.name,
         initials: loser.initials,
+        fillColor: colour,
+        strokeColor: colour,
+        pointColor: colour,
+        pointStrokeColor: colour,
         data: []
       });
 
       for (var i = 0; i < labels.length; i++) {
         var correspondingDataFound,
-        diff = 0;
+            diff = 0;
 
         for (var weightKey in loser.weights) {
 
@@ -54,10 +65,8 @@ loserControllers.controller('LoserChartCtrl', ['$scope', '$rootScope', 'sortDate
             diff = dataset.data[dataset.data.length - 1];
           }
         };
-
         dataset.data.push(diff);
       };
-
       datasets.push(dataset);
     });
 
